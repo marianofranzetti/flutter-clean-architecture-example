@@ -1,0 +1,24 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:clean_template/layers/presentation/app_root.dart';
+import 'package:clean_template/layers/presentation/using_get_it/injector.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+enum StateManagementOptions {
+  bloc,
+  cubit,
+  provider,
+  riverpod,
+  getIt,
+  mobX,
+}
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final sharedPref = await SharedPreferences.getInstance();
+  await initializeGetIt(sharedPref);
+  Animate.restartOnHotReload = true;
+
+  runApp(const ProviderScope(child: AppRoot()));
+}

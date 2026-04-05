@@ -1,0 +1,12 @@
+# Copy this file to key.properties, fill in your keystore details, and DO NOT commit key.properties to version control.
+# Add `key.properties` to your .gitignore file.
+#
+# To generate a keystore:
+#   keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+#
+# See: https://docs.flutter.dev/deployment/android#signing-the-app
+
+storeFile=/path/to/your/upload-keystore.jks
+storePassword=your_store_password
+keyAlias=upload
+keyPassword=your_key_password
